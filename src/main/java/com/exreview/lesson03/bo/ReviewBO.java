@@ -11,10 +11,24 @@ public class ReviewBO {
 
 	@Autowired
 	private ReviewMapper reviewMapper;
-	
-	// input : id
-	// output : Review
+
 	public Review getReview(int id) {
 		return reviewMapper.selectReview(id);
+	}
+	
+	public int addReview(Review review) {
+		return reviewMapper.insertReview(review);
+	}
+	
+	public int addReviewAsFiedld(int storeId, String menu, String userName, double point, String review) {
+		return reviewMapper.insertReviewAsFiedld(storeId, menu, userName, point, review);
+	}
+	
+	public int updateReviewById(int id, String review) {
+		return reviewMapper.updateReviewById(id, review);
+	}
+	
+	public void deleteReviewById(int id) {
+		reviewMapper.deleteReviewById(id);
 	}
 }

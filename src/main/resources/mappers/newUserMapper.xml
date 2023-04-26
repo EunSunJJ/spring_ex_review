@@ -24,4 +24,19 @@
  				
  			)
  	</insert>
+ 	
+ 	<select id="selectLastUser" resultType="com.exreview.lesson04.model.NewUser">
+ 		SELECT
+ 				`id`
+ 				, `name`
+				, `yyyymmdd`
+				, `email`
+				, `introduce`
+				, `createdAt`
+				, `updatedAt`
+		FROM
+			`new_user`
+		ORDER BY `id` DESC
+		LIMIT 1
+ 	</select>
  </mapper>
